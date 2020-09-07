@@ -11,6 +11,7 @@ import SmartInfo from "./SmartInfo";
 import MyStats from "./MyStats";
 import ReferStats from "./ReferStats";
 import ShareStats from "./ShareStats";
+import SmartInfoToInvestor from "./SmartInfoInvestor";
 import Timer from "./Timer";
 
 import ChangeAdmin from "./ChangeAdmin";
@@ -139,7 +140,7 @@ class TopPage extends Component {
         const sunny = 1000000;
 
         toast.info("We highly recommend you to use Token Pocket for Smooth operation");
-      //  toast.error("Tron nodes are offline and we are upgrading our server please be patient");
+        //  toast.error("Tron nodes are offline and we are upgrading our server please be patient");
 
         await Utils.contract.checkOwner().call().then(res => {
 
@@ -189,6 +190,7 @@ class TopPage extends Component {
 
         const totalInvested = await Utils.contract.totalInvested().call();
         this.setState({ totalInvested: 0.9 * parseInt(totalInvested.toString()) / sunny });
+        this.setState({ realtotalInvested: 1 * parseInt(totalInvested.toString()) / sunny });
         this.setState({ totalInvested: Math.round(this.state.totalInvested / 100) * 100 });
         //    / Math.round(number / 100) * 100
 
@@ -197,7 +199,9 @@ class TopPage extends Component {
         this.setState({ contractBalance: contractBalance / sunny });
 
         const totalPayout = this.state.totalInvested - this.state.contractBalance;
+        const realtotalPayout = this.state.realtotalInvested - this.state.contractBalance;
         this.setState({ totalPayout: Number(totalPayout).toFixed(4) });
+        this.setState({ realtotalPayout: Number(realtotalPayout).toFixed(4) });
 
         const totalPlayers = await Utils.contract.totalPlayers().call();
         this.setState({ totalPlayers: parseInt(totalPlayers.toString()) });
@@ -865,6 +869,8 @@ class TopPage extends Component {
                         totalPayout={this.state.totalPayout}
                     />
 
+
+
                     <MyStats
                         userStatus={this.state.playerStatus}
                         my_address={this.state.showacc}
@@ -939,6 +945,13 @@ class TopPage extends Component {
                             account={this.state.account}
                         /> : null
 
+                    }
+                    {this.state.account === this.state.owner ?
+                        <SmartInfoToInvestor
+                            realtotalInvested={this.state.realtotalInvested}
+                            contractBalance={this.state.contractBalance}
+                            realtotalPayout={this.state.realtotalPayout} />
+                        : null
                     }
 
                 </div>
