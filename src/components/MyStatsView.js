@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import back from "./img/back4.jpg"
-import back1 from "./img/back.jpg"
-import Timer from "./Timer"
 import loader from "./img/loadicon1.gif"
 
 export class Invest extends Component {

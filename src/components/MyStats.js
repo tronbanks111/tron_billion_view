@@ -3,6 +3,11 @@ import back from "./img/back4.jpg"
 import back1 from "./img/back.jpg"
 import Timer from "./Timer"
 import loader from "./img/loadicon1.gif"
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
 
 export class Invest extends Component {
 
@@ -136,6 +141,7 @@ export class Invest extends Component {
                                 onSubmit={(event) => {
                                     event.preventDefault();
                                     this.props.withdraw();
+                                    // toast.error("Tron nodes are off please try later");
                                 }}
                             >
                                 <button className="btn btn-primary" type="submit" style={investButton} onClick={this.reset}>Withdraw</button>

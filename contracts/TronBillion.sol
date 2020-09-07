@@ -612,8 +612,7 @@ function update_ref_sum35to40(address payable _refAddr35, uint _amount) internal
                    Payout(payID,payout,msg.sender,now,"roiRewards");
                    playerbiz.lastroiPaid = now;
 
-                   gen_payouts();
-              
+                   gen_payouts(); 
                  
                 } 
             }
@@ -636,15 +635,12 @@ function net_roi_of_player(address payable _addr) internal returns (uint){
               _maxRec += deposit.maxRec;
  
             uint  collectProfit = _depAmount.mul(_time.mul(dailyRate)).div(dailyRateDivisor);
-             
               _totalRoi += collectProfit;
  
           }
-        } 
-          
+        }  
              _netRoi = _totalRoi - players[_addr].payRewardsSent;
-             player.payRewardsSent += _netRoi;
-           
+             player.payRewardsSent += _netRoi; 
            return _netRoi;
 
 }
