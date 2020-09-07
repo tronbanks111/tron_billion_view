@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import back from "./img/brick.jpg"
 import back1 from "./img/back.jpg"
 import TronWeb from 'tronweb';
-import Utils from 'utils';
+import Utils from '../utils';
 //import Home from "./Home";
 import Invest from "./Invest";
 import View from "./View";
@@ -12,11 +12,7 @@ import MyStats from "./MyStats";
 import ReferStats from "./ReferStats";
 import ShareStats from "./ShareStats";
 import SmartInfoToInvestor from "./SmartInfoInvestor";
-import Timer from "./Timer";
 
-import ChangeAdmin from "./ChangeAdmin";
-import Footer from "./Footer";
-import Param from "./Param";
 
 import 'react-toastify/dist/ReactToastify.css';
 

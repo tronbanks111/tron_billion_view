@@ -13,40 +13,12 @@ export class Invest extends Component {
         }
     }
     render() {
-        const backStyle = {
-            backgroundImage: `url(${back})`, backgroundAttachment: "fixed", fontFamily: "MyFont"
-            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
-        };
+
         const colStyle = {
             backgroundColor: "black", opacity: "60%", marginTop: "20px", borderRadius: "20px", border: "5px solid white", marginLeft: "20px", marginRight: "20px",
         };
         const h2Style = {
             fontSize: "30px", color: "orange", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-        const h3Style = {
-            fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-
-        const h4Style = {
-            fontSize: "15px", color: "orange", textAlign: "right", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-
-        const addButton = {
-            display: "inline - block",
-            padding: "0.5em 1em",
-            textDecoration: "none",
-            color: "#FFF",
-            backgroundImage: "-webkit - linear - gradient(#6795fd 0 %, #67ceff 100 %)",
-            backgroundImage: "linear - gradient(#1f4037 0 %, #99f2c8 100 %)",
-            transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px"
-        }
-
-        const investButton = {
-            display: "inline - block",
-            padding: "0.5em 1em",
-            textDecoration: "none",
-            color: "#FFF",
-            transition: ".4s", marginTop: "20px", marginLeft: "10px", marginBottom: "20px", fontWeight: "3px", fontFamily: "MyFont", textAlign: "right", border: "2px solid white", backgroundColor: "#5B2C6F",
         }
 
         return (

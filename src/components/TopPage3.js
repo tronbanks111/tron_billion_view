@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import back from "./img/brick.jpg"
 import back1 from "./img/back.jpg"
 import TronWeb from 'tronweb';
-import Utils from 'utils';
+import Utils from '../utils';
 //import Home from "./Home";
 import GoBack from "./GoBack";
 import SmartInfo from "./SmartInfo";

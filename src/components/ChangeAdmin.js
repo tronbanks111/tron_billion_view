@@ -7,7 +7,7 @@ class ChangeAdmin extends Component {
                 <div className="col-xl-5" style={{
                     animation: "animated - border 1.5s infinite",
                     fontSize: "18px", lineHeight: "30px", fontWeight: "bold", color: "white", borderRadius: "20px", borderSpacing: "15px", padding: "15px", background: "#1A246C", marginTop: "10px", marginLeft: "10px", marginRight: "10px", opacity: "80%", width: "500px",
-                    background: "linear-gradient(to right, #c31432, #240b36 )"
+                    backgroundImage: "linear-gradient(to right, #c31432, #240b36 )"
 
                 }}>
                     {this.props.account === this.props.owner ?
