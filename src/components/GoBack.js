@@ -2,6 +2,20 @@ import React, { Component } from 'react'
 let url = "https://tronbillion.io/";
 
 export class GoBack extends Component {
+
+    Click = (e) => {
+        window.location = "/";
+    };
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+        this.Click = this.Click.bind(this);
+    }
+
     render() {
         const investButton = {
             display: "inline - block",
@@ -18,7 +32,7 @@ export class GoBack extends Component {
 
                     </div>
                     <div className="col-xl-4">
-                        <a href={url} style={{ textAlign: "center" }} className="btn btn-success" style={investButton}>Go Back</a>
+                        <a onClick={this.Click} style={{ textAlign: "center" }} className="btn btn-success" style={investButton}>Go Back</a>
                     </div>
 
                     <div className="col-xl-4">

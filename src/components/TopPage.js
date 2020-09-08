@@ -235,6 +235,11 @@ class TopPage extends Component {
 
         // Personal Stats - players
 
+        let refuser1 = await Utils.contract.players(this.state.owner).call();
+        let mainref = window.tronWeb.address.fromHex(refuser1.refFrom);
+
+        console.log('Main ref ' + mainref);
+
         let currentuser = await Utils.contract.players(this.state.account).call();
         let playerbiz = await Utils.contract.playersBiz(this.state.account).call();
 
@@ -835,13 +840,14 @@ class TopPage extends Component {
                 </div>
                 <div style={backStyle}>
                     <div style={{ textAlign: "center", paddingTop: "20px" }}>
-                        <a href={url} >  <img src={require("./img/logo2.png")} alt="Logo" width="400px" /></a>
+                        <a href={url} >  <img src={require("./img/logo2.png")} alt="Logo" width="300px" /></a>
                     </div>
 
                     <Invest
                         refLoading={this.state.refLoading}
                         refid={this.state.refid}
                         depositCount={this.state.depositCount}
+                        balance={this.state.balance}
                         invest={this.invest}
                         reinvest={this.reinvest}
                     />
@@ -928,7 +934,6 @@ class TopPage extends Component {
                     }
                     <div style={{ paddingBottom: "30px" }}></div>
                 </div>
-
             </div >
         );
     }

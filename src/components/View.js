@@ -28,10 +28,10 @@ export class Invest extends Component {
             , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
         };
         const colStyle = {
-            backgroundColor: "black", opacity: "60%", marginTop: "20px", borderRadius: "20px", border: "5px solid white", marginLeft: "20px", marginRight: "20px",
+            backgroundColor: "black", marginTop: "20px", borderRadius: "20px", border: "3px solid green", marginLeft: "20px", marginRight: "20px",
         };
         const h2Style = {
-            fontSize: "30px", color: "orange", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold", fontWeight: "bold"
+            fontSize: "24px", color: "orange", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold", fontWeight: "bold"
         }
         const h3Style = {
             fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
@@ -94,7 +94,7 @@ export class Invest extends Component {
                                     ref={(input) => {
                                         this.address = input;
                                     }}
-                                    style={{ backgroundColor: "#000", borderRadius: "10px", height: "50px", opacity: "80%", color: "White", fontSize: "25px", paddingLeft: "30px", border: "2px solid white" }}
+                                    style={{ backgroundColor: "#000", borderRadius: "10px", height: "50px", opacity: "80%", color: "White", fontSize: "15px", paddingLeft: "30px", border: "2px solid white" }}
                                     placeholder="Enter Address to View"
 
                                     required />

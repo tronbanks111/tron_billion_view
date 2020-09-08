@@ -156,7 +156,8 @@ class TopPage extends Component {
                 this.setState({ refid: this.props.refLinkid });
             }
             else {
-                this.setState({ refid: this.state.owner });
+                toast.error("Invalid Address");
+                window.location = "/";
             }
 
         } else {
@@ -246,6 +247,8 @@ class TopPage extends Component {
 
         let depositCount = currentuser.depositCount;
         this.setState({ depositCount: parseInt(depositCount.toString()) });
+        this.setState({ depoCountLoad: false });
+
         // // console.log('depositCount ' + this.state.depositCount);
 
         let payoutSum = currentuser.payoutSum;
@@ -655,14 +658,12 @@ class TopPage extends Component {
 
         const payID = await Utils.contract.payID().call();
         this.setState({ payID: parseInt(payID.toString()) });
-        if (this.state.refid === "undefined") {
-            this.setState({ refid: this.state.owner });
-        }
+
         //  console.log('Last ref ' + this.state.refid);
         this.setState({ loading: false });
+        console.log('depos count 1 ');
+        console.log('depos count ' + this.state.depositCount);
 
-        // let own = "Some address";
-        // this.setState({ owner: own });
     }
 
 
@@ -759,6 +760,7 @@ class TopPage extends Component {
             refLoading: true,
             walletload: true,
             balanceload: true,
+            depoCountLoad: true,
             totalInvestmentLoad: true,
             playerStatus: "In Active",
             boostStatus: "In Active",
@@ -850,10 +852,10 @@ class TopPage extends Component {
             , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden",
         };
         const colStyle = {
-            backgroundColor: "none", opacity: "80%", backgroundImage: `url(${back1})`, marginTop: "20px", borderRadius: "20px", border: "5px solid white", marginLeft: "20px", marginRight: "20px",
+            backgroundColor: "none", opacity: "80%", backgroundImage: `url(${back1})`, marginTop: "20px", borderRadius: "20px", border: "3px solid green", marginLeft: "20px", marginRight: "20px",
         };
         const h2Style = {
-            fontSize: "30px", color: "white", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
+            fontSize: "24px", color: "white", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
         }
         const h3Style = {
             fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
@@ -869,28 +871,31 @@ class TopPage extends Component {
                 </div>
                 <div style={backStyle}>
                     <div style={{ textAlign: "center", paddingTop: "20px" }}>
-                        <a href={url} >  <img src={require("./img/logo2.png")} alt="Logo" width="400px" /></a>
+                        <a href={url} >  <img src={require("./img/logo2.png")} alt="Logo" width="300px" /></a>
                     </div>
 
+                    {
+                        this.state.depositCount > 0 && this.state.depoCountLoad === false
+                            ?
+                            <MyStatsView
+                                userStatus={this.state.playerStatus}
+                                my_address={this.state.showacc}
+                                upline={this.state.showref}
+                                direct_bonus={this.state.refRewards}
+                                gen_bonus={this.state.payRewards}
+                                roiUnclaimed={this.state.roiUnclaimed}
+                                roiClaimed={this.state.roiClaimed}
+                                total_deposits={this.state.myTotalInvestment}
+                                limit_remaining={this.state.maxRec1}
+                                withdraw={this.withdraw}
+                                walletload={this.state.walletload}
+                                payouts={this.state.payoutSum}
+                                roiLoading={this.state.roiLoading}
 
-                    <MyStatsView
-                        userStatus={this.state.playerStatus}
-                        my_address={this.state.showacc}
-                        upline={this.state.showref}
-                        direct_bonus={this.state.refRewards}
-                        gen_bonus={this.state.payRewards}
-                        roiUnclaimed={this.state.roiUnclaimed}
-                        roiClaimed={this.state.roiClaimed}
-                        total_deposits={this.state.myTotalInvestment}
-                        limit_remaining={this.state.maxRec1}
-                        withdraw={this.withdraw}
-                        walletload={this.state.walletload}
-                        payouts={this.state.payoutSum}
-                        roiLoading={this.state.roiLoading}
+                            /> : <h2 style={{ color: "White" }}>No data found</h2>}
 
-                    />
-                    {this.state.account1 === this.state.owner
-                        ? <ReferStatsInvestorView
+                    {this.state.depositCount > 0 && this.state.depoCountLoad === false
+                        ? <ReferStatsView
                             refsum1={this.state.ref1sum}
                             refsum2={this.state.ref2sum}
                             refsum3={this.state.ref3sum}
@@ -911,26 +916,6 @@ class TopPage extends Component {
                             refsum18={this.state.ref18sum}
                             refsum19={this.state.ref19sum}
                             refsum20={this.state.ref20sum}
-                            refsum21={this.state.ref21sum}
-                            refsum22={this.state.ref22sum}
-                            refsum23={this.state.ref23sum}
-                            refsum24={this.state.ref24sum}
-                            refsum25={this.state.ref25sum}
-                            refsum26={this.state.ref26sum}
-                            refsum27={this.state.ref27sum}
-                            refsum28={this.state.ref28sum}
-                            refsum29={this.state.ref29sum}
-                            refsum30={this.state.ref30sum}
-                            refsum31={this.state.ref31sum}
-                            refsum32={this.state.ref32sum}
-                            refsum33={this.state.ref33sum}
-                            refsum34={this.state.ref34sum}
-                            refsum35={this.state.ref35sum}
-                            refsum36={this.state.ref36sum}
-                            refsum37={this.state.ref37sum}
-                            refsum38={this.state.ref38sum}
-                            refsum39={this.state.ref39sum}
-                            refsum40={this.state.ref40sum}
 
                             refbiz1={this.state.ref1biz}
                             refbiz2={this.state.ref2biz}
@@ -952,78 +937,12 @@ class TopPage extends Component {
                             refbiz18={this.state.ref18biz}
                             refbiz19={this.state.ref19biz}
                             refbiz20={this.state.ref20biz}
-                            refbiz21={this.state.ref21biz}
-                            refbiz22={this.state.ref22biz}
-                            refbiz23={this.state.ref23biz}
-                            refbiz24={this.state.ref24biz}
-                            refbiz25={this.state.ref25biz}
-                            refbiz26={this.state.ref26biz}
-                            refbiz27={this.state.ref27biz}
-                            refbiz28={this.state.ref28biz}
-                            refbiz29={this.state.ref29biz}
-                            refbiz30={this.state.ref30biz}
-                            refbiz31={this.state.ref31biz}
-                            refbiz32={this.state.ref32biz}
-                            refbiz33={this.state.ref33biz}
-                            refbiz34={this.state.ref34biz}
-                            refbiz35={this.state.ref35biz}
-                            refbiz36={this.state.ref36biz}
-                            refbiz37={this.state.ref37biz}
-                            refbiz38={this.state.ref38biz}
-                            refbiz39={this.state.ref39biz}
-                            refbiz40={this.state.ref40biz}
-
                             totalRefInvBiz={this.state.totalRefInvBiz}
                             totalRefInvSum={this.state.totalRefInvSum}
 
                         />
 
-                        : <ReferStatsView
-                            refsum1={this.state.ref1sum}
-                            refsum2={this.state.ref2sum}
-                            refsum3={this.state.ref3sum}
-                            refsum4={this.state.ref4sum}
-                            refsum5={this.state.ref5sum}
-                            refsum6={this.state.ref6sum}
-                            refsum7={this.state.ref7sum}
-                            refsum8={this.state.ref8sum}
-                            refsum9={this.state.ref9sum}
-                            refsum10={this.state.ref10sum}
-                            refsum11={this.state.ref11sum}
-                            refsum12={this.state.ref12sum}
-                            refsum13={this.state.ref13sum}
-                            refsum14={this.state.ref14sum}
-                            refsum15={this.state.ref15sum}
-                            refsum16={this.state.ref16sum}
-                            refsum17={this.state.ref17sum}
-                            refsum18={this.state.ref18sum}
-                            refsum19={this.state.ref19sum}
-                            refsum20={this.state.ref20sum}
-
-                            refbiz1={this.state.ref1biz}
-                            refbiz2={this.state.ref2biz}
-                            refbiz3={this.state.ref3biz}
-                            refbiz4={this.state.ref4biz}
-                            refbiz5={this.state.ref5biz}
-                            refbiz6={this.state.ref6biz}
-                            refbiz7={this.state.ref7biz}
-                            refbiz8={this.state.ref8biz}
-                            refbiz9={this.state.ref9biz}
-                            refbiz10={this.state.ref10biz}
-                            refbiz11={this.state.ref11biz}
-                            refbiz12={this.state.ref12biz}
-                            refbiz13={this.state.ref13biz}
-                            refbiz14={this.state.ref14biz}
-                            refbiz15={this.state.ref15biz}
-                            refbiz16={this.state.ref16biz}
-                            refbiz17={this.state.ref17biz}
-                            refbiz18={this.state.ref18biz}
-                            refbiz19={this.state.ref19biz}
-                            refbiz20={this.state.ref20biz}
-                            totalRefBiz={this.state.totalRefBiz}
-                            totalRefSum={this.state.totalRefSum}
-
-                        />
+                        : <div style={{ paddingBottom: "1000px" }}></div>
 
 
                     }
