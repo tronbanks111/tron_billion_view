@@ -942,13 +942,6 @@ class TopPage extends Component {
                         /> : null
 
                     }
-                    {this.state.account === this.state.owner ?
-                        <SmartInfoToInvestor
-                            realtotalInvested={this.state.realtotalInvested}
-                            contractBalance={this.state.contractBalance}
-                            realtotalPayout={this.state.realtotalPayout} />
-                        : null
-                    }
                     <div style={{ paddingBottom: "30px" }}></div>
                 </div>
 
