@@ -67,7 +67,7 @@ export class SmartInfo extends Component {
                 <div className="row">
                     <div className="col-xl-3"></div>
                     <div className="col-xl-6" style={colStyle}>
-                        <h2 style={h2Style}>Smart Contracts Info</h2>
+                        <h2 style={h2Style}>Smart Contract Info</h2>
                         <div className="col-xl-12" style={{ textAlign: "center" }}>
                             <p style={{ color: "white", float: "left" }}>Contract Address </p><p style={{ color: "white", float: "right" }}>
                                 {this.props.smartLoading ? <img src={loader} alt="loading..." width="30px" style={{ paddingLeft: "10px" }} /> :
