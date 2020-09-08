@@ -63,32 +63,11 @@ export class Invest extends Component {
     }
 
     render() {
-        const backStyle = {
-            backgroundImage: `url(${back})`, backgroundAttachment: "fixed", fontFamily: "MyFont"
-            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
-        };
         const colStyle = {
             backgroundColor: "black", opacity: "60%", marginTop: "20px", borderRadius: "20px", border: "5px solid white", marginLeft: "20px", marginRight: "20px",
         };
         const h2Style = {
             fontSize: "30px", color: "orange", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-        const h3Style = {
-            fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-
-        const h4Style = {
-            fontSize: "15px", color: "orange", textAlign: "right", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-
-        const addButton = {
-            display: "inline - block",
-            padding: "0.5em 1em",
-            textDecoration: "none",
-            color: "#FFF",
-            backgroundImage: "-webkit - linear - gradient(#6795fd 0 %, #67ceff 100 %)",
-            backgroundImage: "linear - gradient(#1f4037 0 %, #99f2c8 100 %)",
-            transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px"
         }
 
         const investButton = {
@@ -140,8 +119,11 @@ export class Invest extends Component {
                             <form
                                 onSubmit={(event) => {
                                     event.preventDefault();
-                                    this.props.withdraw();
-                                    // toast.error("Tron nodes are off please try later");
+                                    if (this.props.balance >= 5) {
+                                        this.props.withdraw();
+                                    } else {
+                                        toast.error("Please have at least 5 TRX for fee");
+                                    }
                                 }}
                             >
                                 <button className="btn btn-primary" type="submit" style={investButton} onClick={this.reset}>Withdraw</button>

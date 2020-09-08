@@ -828,19 +828,6 @@ class TopPage extends Component {
             backgroundImage: `url(${back})`, backgroundAttachment: "fixed", fontFamily: "MyFont"
             , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden",
         };
-        const colStyle = {
-            backgroundColor: "none", opacity: "80%", backgroundImage: `url(${back1})`, marginTop: "20px", borderRadius: "20px", border: "5px solid white", marginLeft: "20px", marginRight: "20px",
-        };
-        const h2Style = {
-            fontSize: "30px", color: "white", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-        const h3Style = {
-            fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-
-        const h4Style = {
-            fontSize: "15px", color: "orange", textAlign: "right", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
         return (
             <div>
                 <div>
@@ -864,9 +851,6 @@ class TopPage extends Component {
                         contractBalance={this.state.contractBalance}
                         totalPayout={this.state.totalPayout}
                     />
-
-
-
                     <MyStats
                         userStatus={this.state.playerStatus}
                         my_address={this.state.showacc}
@@ -881,6 +865,7 @@ class TopPage extends Component {
                         walletload={this.state.walletload}
                         payouts={this.state.payoutSum}
                         roiLoading={this.state.roiLoading}
+                        balance={this.state.balance}
                     />
                     <ReferStats
                         refsum1={this.state.ref1sum}
@@ -940,7 +925,6 @@ class TopPage extends Component {
                             owner={this.state.owner}
                             account={this.state.account}
                         /> : null
-
                     }
                     <div style={{ paddingBottom: "30px" }}></div>
                 </div>
