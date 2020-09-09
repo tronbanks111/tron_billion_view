@@ -849,21 +849,9 @@ class TopPage extends Component {
     render() {
         const backStyle = {
             backgroundImage: `url(${back})`, backgroundAttachment: "fixed", fontFamily: "MyFont"
-            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden",
+            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden", marginTop: "-30px"
         };
-        const colStyle = {
-            backgroundColor: "none", opacity: "80%", backgroundImage: `url(${back1})`, marginTop: "20px", borderRadius: "20px", border: "3px solid green", marginLeft: "20px", marginRight: "20px",
-        };
-        const h2Style = {
-            fontSize: "24px", color: "white", textAlign: "center", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
-        const h3Style = {
-            fontSize: "15px", color: "orange", textAlign: "left", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
 
-        const h4Style = {
-            fontSize: "15px", color: "orange", textAlign: "right", fontFamily: "MyFont", margin: "20px", paddingTop: "10px", paddingBottom: "10px", fontWeight: "bold"
-        }
         return (
             <div>
                 <div>

@@ -733,8 +733,6 @@ class TopPage extends Component {
         this.setState({ copySuccess1: true });
     };
 
-
-
     constructor(props) {
         super(props)
 
@@ -831,7 +829,7 @@ class TopPage extends Component {
     render() {
         const backStyle = {
             backgroundImage: `url(${back})`, backgroundAttachment: "fixed", fontFamily: "MyFont"
-            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden",
+            , height: "auto", width: "100%", margin: "0", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden", marginTop: "-30px"
         };
         return (
             <div>
