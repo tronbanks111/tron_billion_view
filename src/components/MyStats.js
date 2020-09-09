@@ -6,6 +6,7 @@ import loader from "./img/loadicon1.gif"
 import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+let tronAddressurl = "https://tronscan.org/#/address/";
 
 toast.configure();
 
@@ -91,12 +92,13 @@ export class Invest extends Component {
                             <p style={{ color: "white", float: "left" }}>My Address </p>
                             {this.state.walletLoad ?
                                 <img src={loader} alt="loading..." width="30px" style={{ paddingLeft: "20px" }} />
-                                : <p style={{ color: "white", float: "right" }}>
+                                : <a href={tronAddressurl + this.props.my_address1} style={{ color: "white", float: "right", textDecoration: "underline" }}>
 
-                                    {this.props.my_address}...</p>}
+                                    {this.props.my_address}...</a>}
                             <br /><br />
                             <p style={{ color: "white", float: "left" }}>Personal Deposits </p><p style={{ color: "white", float: "right" }}> {this.props.total_deposits} TRX</p><br /><br />
-                            <p style={{ color: "white", float: "left" }}>Referred By</p><p style={{ color: "white", float: "right" }}> {this.props.upline}...</p><br /><br />
+                            <p style={{ color: "white", float: "left" }}>Referred By</p>
+                            <a href={tronAddressurl + this.props.upline1} style={{ color: "white", float: "right", textDecoration: "underline" }}> {this.props.upline}...</a><br /><br />
 
                             <p style={{ color: "white", float: "left" }}>350% Limit Remaining </p><p style={{ color: "white", float: "right" }}> {Number(this.props.limit_remaining).toFixed(4)} TRX</p><br /><br />
                             <p style={{ color: "white", float: "left" }}>1.4% ROI Received</p>

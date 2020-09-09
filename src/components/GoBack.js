@@ -10,9 +10,6 @@ export class GoBack extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-
-        }
         this.Click = this.Click.bind(this);
     }
 

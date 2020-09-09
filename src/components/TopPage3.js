@@ -881,6 +881,8 @@ class TopPage extends Component {
                                 userStatus={this.state.playerStatus}
                                 my_address={this.state.showacc}
                                 upline={this.state.showref}
+                                my_address1={this.state.account}
+                                upline1={this.state.upline}
                                 direct_bonus={this.state.refRewards}
                                 gen_bonus={this.state.payRewards}
                                 roiUnclaimed={this.state.roiUnclaimed}

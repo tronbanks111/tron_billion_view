@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import back from "./img/back4.jpg"
 import loader from "./img/loadicon1.gif"
+let tronAddressurl = "https://tronscan.org/#/address/";
 
 export class Invest extends Component {
 
@@ -31,15 +32,16 @@ export class Invest extends Component {
 
                             <p style={{ color: "white", float: "left" }}>Status</p><p style={{ color: "white", float: "right" }}> {this.props.userStatus}</p><br /><br />
 
-                            <p style={{ color: "white", float: "left" }}>User Address </p>
+                            <p style={{ color: "white", float: "left" }}>My Address </p>
                             {this.state.walletLoad ?
                                 <img src={loader} alt="loading..." width="30px" style={{ paddingLeft: "20px" }} />
-                                : <p style={{ color: "white", float: "right" }}>
+                                : <a href={tronAddressurl + this.props.my_address1} style={{ color: "white", float: "right", textDecoration: "underline" }}>
 
-                                    {this.props.my_address}...</p>}
+                                    {this.props.my_address}...</a>}
                             <br /><br />
-                            <p style={{ color: "white", float: "left" }}>Total Invested </p><p style={{ color: "white", float: "right" }}> {this.props.total_deposits} TRX</p><br /><br />
-                            <p style={{ color: "white", float: "left" }}>Referred By</p><p style={{ color: "white", float: "right" }}> {this.props.upline}...</p><br /><br />
+                            <p style={{ color: "white", float: "left" }}>Personal Deposits </p><p style={{ color: "white", float: "right" }}> {this.props.total_deposits} TRX</p><br /><br />
+                            <p style={{ color: "white", float: "left" }}>Referred By</p>
+                            <a href={tronAddressurl + this.props.upline1} style={{ color: "white", float: "right", textDecoration: "underline" }}> {this.props.upline}...</a><br /><br />
 
                             <p style={{ color: "white", float: "left" }}>350% Limit Remaining </p><p style={{ color: "white", float: "right" }}> {Number(this.props.limit_remaining).toFixed(4)} TRX</p><br /><br />
                             <p style={{ color: "white", float: "left" }}>1.4% ROI Received</p>
