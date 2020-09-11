@@ -742,7 +742,7 @@ class TopPage extends Component {
             walletload: true,
             balanceload: true,
             totalInvestmentLoad: true,
-            playerStatus: " Active",
+            playerStatus: "In Active",
             boostStatus: "In Active",
 
             account: '',
