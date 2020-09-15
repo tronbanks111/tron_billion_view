@@ -161,7 +161,9 @@ class TopPage extends Component {
             }
 
         } else {
-            this.setState({ refid: this.state.owner });
+            //  this.setState({ refid: this.state.owner });
+            this.setState({ refid: "one" });
+            console.log(this.state.refid);
         }
 
         //  console.log("refid " + this.state.refid);
@@ -661,6 +663,8 @@ class TopPage extends Component {
 
         const payID = await Utils.contract.payID().call();
         this.setState({ payID: parseInt(payID.toString()) });
+        console.log('Last ref1 ' + this.state.refid);
+
         if (this.state.refid === "undefined") {
             this.setState({ refid: this.state.owner });
         }
@@ -671,17 +675,22 @@ class TopPage extends Component {
 
     invest(refid, amount) {
 
-        return Utils.contract
-            .invest(refid)
-            .send({
-                from: this.state.account,
-                callValue: Number(amount) * 1000000,
-            }).then(res => toast.success(amount + ' TRX Deposit processing', { position: toast.POSITION.TOP_RIGHT, autoClose: 10000 })
+        if (this.state.refid != "one") {
 
-            ).then(res => {
-                window.location = "/";
-            });
+            return Utils.contract
+                .invest(refid)
+                .send({
+                    from: this.state.account,
+                    callValue: Number(amount) * 1000000,
+                }).then(res => toast.success(amount + ' TRX Deposit processing', { position: toast.POSITION.TOP_RIGHT, autoClose: 10000 })
 
+                ).then(res => {
+                    window.location = "/";
+                });
+
+        } else {
+            toast.error("No referral found");
+        }
     }
 
 
@@ -751,7 +760,7 @@ class TopPage extends Component {
             directBiz: 0,
             balance: 0,
             refFlag: 0,
-            totalInvested: 0,
+            totalInvested: 1414200,
 
             lastDepositTime: 0,
             depositCount: 0,
@@ -813,8 +822,8 @@ class TopPage extends Component {
             totalRefBiz: 0,
             maxRec1: 0,
             payoutSum: 0,
-            contractBalance: 0,
-            totalPayout: 0,
+            contractBalance: 755801.488,
+            totalPayout: 658398.5120,
             roiLoading: true,
         }
 
