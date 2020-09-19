@@ -141,7 +141,7 @@ export class Invest extends Component {
 
                             </form>
 
-
+                            <p>Sponsor : {this.props.refid}</p>
                         </div>
                     </div>
                     <div className="col-xl-3"></div>
