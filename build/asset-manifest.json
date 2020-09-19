@@ -1,10 +1,10 @@
 {
   "main.css": "/static/css/main.a593d763.chunk.css",
-  "main.js": "/static/js/main.5fb65f82.chunk.js",
-  "main.js.map": "/static/js/main.5fb65f82.chunk.js.map",
+  "main.js": "/static/js/main.0a8940ac.chunk.js",
+  "main.js.map": "/static/js/main.0a8940ac.chunk.js.map",
   "static/css/1.41170bcb.chunk.css": "/static/css/1.41170bcb.chunk.css",
-  "static/js/1.06ef798f.chunk.js": "/static/js/1.06ef798f.chunk.js",
-  "static/js/1.06ef798f.chunk.js.map": "/static/js/1.06ef798f.chunk.js.map",
+  "static/js/1.c3330deb.chunk.js": "/static/js/1.c3330deb.chunk.js",
+  "static/js/1.c3330deb.chunk.js.map": "/static/js/1.c3330deb.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/imagebg.css": "/static/media/shap-1.1af32a38.png",
@@ -15,9 +15,9 @@
   "static/media/loadicon1.gif": "/static/media/loadicon1.ff100ba3.gif",
   "static/media/style.css": "/static/media/green-ball.64867732.png",
   "static/media/logo2.png": "/static/media/logo2.0ebd6b38.png",
-  "static/css/main.a593d763.chunk.css.map": "/static/css/main.a593d763.chunk.css.map",
   "static/css/1.41170bcb.chunk.css.map": "/static/css/1.41170bcb.chunk.css.map",
+  "static/css/main.a593d763.chunk.css.map": "/static/css/main.a593d763.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.6cfc7ce232da0caf192fbe10afc226f8.js": "/precache-manifest.6cfc7ce232da0caf192fbe10afc226f8.js",
+  "precache-manifest.dbc6c272cdf2eb89e7fef9e6c9cb1281.js": "/precache-manifest.dbc6c272cdf2eb89e7fef9e6c9cb1281.js",
   "service-worker.js": "/service-worker.js"
 }
