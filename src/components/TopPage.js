@@ -243,6 +243,9 @@ class TopPage extends Component {
         let currentuser = await Utils.contract.players(this.state.account).call();
         let playerbiz = await Utils.contract.playersBiz(this.state.account).call();
 
+        let depositCount = currentuser.depositCount;
+        this.setState({ depositCount: parseInt(depositCount.toString()) });
+
         let trxDeposit = currentuser.trxDeposit;
         this.setState({
             trxDeposit: parseInt(trxDeposit.toString()) / sunny
@@ -254,8 +257,6 @@ class TopPage extends Component {
         let maxRec = currentuser.maxRec;
         this.setState({ maxRec: parseInt(maxRec.toString()) / sunny });
 
-        let depositCount = currentuser.depositCount;
-        this.setState({ depositCount: parseInt(depositCount.toString()) });
         // console.log('depositCount ' + this.state.depositCount);
 
         let payoutSum = currentuser.payoutSum;
