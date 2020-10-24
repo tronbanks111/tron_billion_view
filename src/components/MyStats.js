@@ -118,7 +118,7 @@ export class Invest extends Component {
                                     Number(this.props.roiUnclaimed.toFixed(4))}
                                 <span style={{ paddingLeft: "5px" }}>TRX</span></p><br /><br />
 
-                            <form
+                            {/* <form
                                 onSubmit={(event) => {
                                     event.preventDefault();
                                     if (this.props.balance >= 5) {
@@ -129,7 +129,7 @@ export class Invest extends Component {
                                 }}
                             >
                                 <button className="btn btn-primary" type="submit" style={investButton} onClick={this.reset}>Withdraw</button>
-                            </form>
+                            </form> */}
 
 
                             <p>~2 TRX or more Fees needed</p><br />
